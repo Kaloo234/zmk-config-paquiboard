@@ -7,6 +7,8 @@
         compatible = "microchip,mcp230xx";
         reg = <0x20>;
 
+        ngpios = <16>;
+
         gpio-controller;
         #gpio-cells = <2>;
         label = "MCP23017";

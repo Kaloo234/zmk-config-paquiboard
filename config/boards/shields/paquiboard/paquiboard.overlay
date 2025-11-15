@@ -9,7 +9,7 @@
 
         gpio-controller;
         #gpio-cells = <2>;
-        label = "MCP23017"
+        label = "MCP23017";
     };
 };
 

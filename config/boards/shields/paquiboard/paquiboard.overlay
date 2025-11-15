@@ -23,6 +23,9 @@
             reg = <0x20>; // Adresse I2C
             label = "MCP23017";
 
+            gpio-controller;
+            #gpio-cells = <2>;
+
             #address-cells = <1>;
             #size-cells = <0>;
         };

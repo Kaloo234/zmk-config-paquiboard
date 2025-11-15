@@ -9,7 +9,7 @@
     // 1. Définir le contrôleur I2C Logiciel
     // On utilise un autre alias (i2c1) pour ne pas confondre avec le matériel i2c0
     i2c_soft: i2c_software {
-        compatible = "i2c-bitbang"; 
+        compatible = "mcp23017"; 
         status = "okay";
 
         #address-cells = <1>;
@@ -19,7 +19,7 @@
         sda-gpios = <&pro_micro 16 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>;
 
         mcp23017: mcp23017@20 {
-            compatible = "microchip,mcp23017";
+            compatible = "microchip,mcp230xx";
             reg = <0x20>; // Adresse I2C
             label = "MCP23017";
 

@@ -1,32 +1,22 @@
 #include  <dt-bindings/zmk/matrix_transform.h>
 
+&i2c0 {
+    status = "okay";
+
+    mcp23017: mcp23017@20 {
+        compatible = "microchip,mcp230xx";
+        reg = <0x20>;
+
+        gpio-controller;
+        #gpio-cells = <2>;
+        label = "MCP23017"
+    };
+};
+
 /{
     choosen {
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
-    };
-
-    i2c_soft: i2c_software {
-        compatible = "mcp23017"; 
-        status = "okay";
-
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        scl-gpios = <&pro_micro 10 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>;
-        sda-gpios = <&pro_micro 16 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>;
-
-        mcp23017: mcp23017@20 {
-            compatible = "microchip,mcp230xx";
-            reg = <0x20>; // Adresse I2C
-            label = "MCP23017";
-
-            gpio-controller;
-            #gpio-cells = <2>;
-
-            #address-cells = <1>;
-            #size-cells = <0>;
-        };
     };
 
     default_kscan: kscan {
@@ -78,8 +68,4 @@
             RC(5,0) RC(5,1) RC(5,2) RC(5,3)                         RC(11,6)                   RC(11,3) RC(11,2) RC(11,1) RC(11,0) RC(17,3) RC(17,2) RC(17,1) RC(17,0)
         >;
     };
-};
-
-&i2c0 {
-    status = "disabled";
 };

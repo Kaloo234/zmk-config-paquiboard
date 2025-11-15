@@ -1,0 +1,8 @@
+if SHIELD_PAQUIBOARD
+
+config ZMK_KEYBOARD_NAME
+    default "PaquiBoard"
+
+endif
+
+CONFIG_ZMK_EXT_POWER_GPIO_EXPANDER=y

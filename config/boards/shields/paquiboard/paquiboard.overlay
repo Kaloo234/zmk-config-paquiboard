@@ -6,8 +6,6 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    // 1. Définir le contrôleur I2C Logiciel
-    // On utilise un autre alias (i2c1) pour ne pas confondre avec le matériel i2c0
     i2c_soft: i2c_software {
         compatible = "mcp23017"; 
         status = "okay";

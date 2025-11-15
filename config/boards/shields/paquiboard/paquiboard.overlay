@@ -8,16 +8,13 @@
 
     // 1. Définir le contrôleur I2C Logiciel
     // On utilise un autre alias (i2c1) pour ne pas confondre avec le matériel i2c0
-    i2c1: i2c_software {
-        // Indiquer au système que c'est un I2C logiciel (bit-banging)
+    i2c_soft: i2c_software {
         compatible = "i2c-bitbang"; 
         status = "okay";
 
-        // Définir les pins SDA et SCL à la place de D0 et D1
-        scl-gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>; // D2 (P1.08)
-        sda-gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>; // D3 (P1.09)
+        scl-gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>;
+        sda-gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_OPEN_DRAIN)>;
 
-        // Définition de l'expandeur d'E/S MCP23017 sur ce nouveau bus I2C
         mcp23017: mcp23017@20 {
             compatible = "microchip,mcp23017";
             reg = <0x20>; // Adresse I2C

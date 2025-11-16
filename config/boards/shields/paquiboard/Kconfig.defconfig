@@ -7,7 +7,7 @@ if SHIELD_PAQUIBOARD
 config ZMK_KEYBOARD_NAME
     default "PaquiBoard"
 
-configdefault I2C
+config I2C
     default y
 
 endif

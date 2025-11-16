@@ -1,13 +1,12 @@
 CONFIG_ZMK_EXT_POWER_GPIO_EXPANDER=y
 CONFIG_GPIO_MCP23017=y
-CONFIG_I2C=y
+
+configdefault I2C
+  default y
 
 if SHIELD_PAQUIBOARD
 
 config ZMK_KEYBOARD_NAME
     default "PaquiBoard"
-
-config I2C
-    default y
 
 endif

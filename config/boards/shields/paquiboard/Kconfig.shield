@@ -1,2 +1,2 @@
 config SHIELD_PAQUIBOARD
-    def_bool $(shields_list_contains, paquiboard)
+    def_bool $(shields_list_contains,paquiboard)
